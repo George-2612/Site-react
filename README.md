@@ -1,16 +1,14 @@
-# React + Vite
+Este portal é a interface centralizada da FUNDARPE para o cumprimento da Lei de Acesso à Informação (LAI). Desenvolvido em React + Vite, o projeto foca em alta performance, acessibilidade (WCAG) e segurança. A aplicação serve como porta de entrada para dados de licitações, recursos humanos e relatórios fiscais, integrando-se ao ecossistema de transparência do Estado de Pernambuco.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔄 Fluxo de Desenvolvimento e Deploy (CI/CD)
+O ciclo de vida deste software segue o padrão rigoroso da ATI, garantindo que apenas código testado e seguro chegue ao cidadão:
 
-Currently, two official plugins are available:
+Desenvolvimento Local: Codificação no VS Code e validação via npm run dev.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Garantia de Qualidade: Execução de npm run lint e análise estática via SonarQube (exigência de Nota A em Segurança e Manutenibilidade).
 
-## React Compiler
+Versionamento: Push para o GitLab PE (via OpenVPN) para acionamento das pipelines institucionais.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Homologação (HML): O código passa por testes de cobertura (meta de 90%) e é implantado em containers no ambiente de teste.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Produção (PRD): Após validação da diretoria, o deploy é automatizado via Nomad para os servidores oficiais.
