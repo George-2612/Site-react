@@ -28,7 +28,7 @@ function App() {
       {/* CARDS */}
       <main className="container py-5 flex-grow-1">
         <div className="row g-4">
-          {cards.map((card, i) => (
+          {cards.map((card,) => (
             <div key={card.t} className="col-md-6 col-lg-4">
               <div className="card h-100 border-0 shadow-sm p-4 text-center">
                 <div className="card-body d-flex flex-column">
