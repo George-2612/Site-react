@@ -1,0 +1,64 @@
+/* --- ESTILO GERAL --- */
+body { transition: background-color 0.3s ease; }
+
+/* --- WIDGET ACESSIBILIDADE --- */
+.grupo-acessibilidade-flutuante {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+  background-color: #0d6efd;
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.grupo-acessibilidade-flutuante button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- MODO NOTURNO (ESTILO GITHUB) --- */
+body.alto-contraste {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+
+body.alto-contraste .card, 
+body.alto-contraste .bg-white,
+body.alto-contraste header,
+body.alto-contraste .bg-light,
+body.alto-contraste .border.rounded.bg-light {
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
+  border: 1px solid #30363d !important;
+  box-shadow: none !important;
+}
+
+body.alto-contraste h1, body.alto-contraste h2, body.alto-contraste .fw-bold, body.alto-contraste .text-dark {
+  color: #f0f6fc !important;
+}
+
+body.alto-contraste .btn-warning {
+  background-color: #21262d !important;
+  color: #58a6ff !important;
+  border: 1px solid #30363d !important;
+}
+
+body.alto-contraste .grupo-acessibilidade-flutuante {
+  background-color: #f0f6fc;
+  border-color: #58a6ff;
+}
+
+body.alto-contraste .grupo-acessibilidade-flutuante button { color: #0d1117; }
+body.alto-contraste .text-muted, body.alto-contraste .text-secondary { color: #8b949e !important; }
