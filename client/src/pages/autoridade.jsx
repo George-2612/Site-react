@@ -5,12 +5,11 @@ function Autoridade() {
   const [info, setInfo] = useState(null);
 
   useEffect(() => {
-    // Busca os dados da Presidente no servidor Node (REQ-18)
-    fetch('http://localhost:5000/api/autoridade')
-      .then(res => res.json())
-      .then(data => setInfo(data))
-      .catch(err => console.error(err));
-  }, []);
+  fetch('http://localhost:3001/api/autoridade')
+    .then(response => response.json())
+    .then(data => setInfo(data)) // 'data' contém nome, cargo e curriculo
+    .catch(error => console.error('Erro ao buscar dados:', error));
+}, []);
 
   if (!info) return <div className="container py-5 text-center">Carregando informações...</div>;
 
