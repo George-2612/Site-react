@@ -1,34 +1,114 @@
-/* --- ESTILO GERAL --- */
-body { transition: background-color 0.3s ease; }
+/* ==========================================================================
+   1. ESTILO GERAL
+   ========================================================================== */
+body { 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
 
-/* --- WIDGET ACESSIBILIDADE --- */
-.grupo-acessibilidade-flutuante {
+/* ==========================================================================
+   2. SEU MENU DE ACESSIBILIDADE (LADO ESQUERDO)
+   ========================================================================== */
+
+.menu-acessibilidade-container {
   position: fixed;
-  right: 20px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
-  background-color: #0d6efd;
-  padding: 10px;
-  border-radius: 30px;
-  border: 2px solid white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  align-items: center; 
+  z-index: 10000;
+  gap: 10px;
 }
 
-.grupo-acessibilidade-flutuante button {
+/* Botão Mestre (O que abre o menu) */
+.botao-acessibilidade-mestre {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+
+.botao-acessibilidade-mestre:hover {
+  transform: scale(1.1);
+}
+
+/* Cápsula de Opções (Aumentar/Diminuir/Contraste) */
+.opcoes-acessibilidade {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-15px);
+  top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: #0d6efd;
+  border-radius: 35px;
+  padding: 15px 10px;
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  
+  /* Controle de exibição via React */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-acessibilidade-container.aberto .opcoes-acessibilidade {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.opcoes-acessibilidade button {
   background: none;
   border: none;
   color: white;
   font-size: 1.4rem;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-/* --- MODO NOTURNO (ESTILO GITHUB) --- */
+/* ==========================================================================
+   3. AJUSTE PARA O VLIBRAS (LADO DIREITO - PADRÃO)
+   ========================================================================== */
+
+/* Apenas garantimos que o VLibras não fique em cima do seu menu no mobile */
+[vw-access-button] {
+  top: 75% !important; /* Mantém ele na direita, mais para baixo */
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 992px) {
+  .menu-acessibilidade-container {
+    top: 120px; /* Move seu menu para o topo em telas pequenas */
+    left: 15px;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   5. MODO ALTO CONTRASTE (ESTILO GITHUB DARK)
+   ========================================================================== */
 body.alto-contraste {
   background-color: #0d1117 !important;
   color: #c9d1d9 !important;
@@ -38,27 +118,20 @@ body.alto-contraste .card,
 body.alto-contraste .bg-white,
 body.alto-contraste header,
 body.alto-contraste .bg-light,
-body.alto-contraste .border.rounded.bg-light {
+body.alto-contraste nav,
+body.alto-contraste footer {
   background-color: #161b22 !important;
   color: #c9d1d9 !important;
   border: 1px solid #30363d !important;
-  box-shadow: none !important;
 }
 
-body.alto-contraste h1, body.alto-contraste h2, body.alto-contraste .fw-bold, body.alto-contraste .text-dark {
-  color: #f0f6fc !important;
+body.alto-contraste .botao-acessibilidade-mestre,
+body.alto-contraste .opcoes-acessibilidade {
+  background-color: #f0f6fc !important;
+  color: #0d1117 !important;
+  border-color: #58a6ff !important;
 }
 
-body.alto-contraste .btn-warning {
-  background-color: #21262d !important;
-  color: #58a6ff !important;
-  border: 1px solid #30363d !important;
+body.alto-contraste .opcoes-acessibilidade button {
+  color: #0d1117 !important;
 }
-
-body.alto-contraste .grupo-acessibilidade-flutuante {
-  background-color: #f0f6fc;
-  border-color: #58a6ff;
-}
-
-body.alto-contraste .grupo-acessibilidade-flutuante button { color: #0d1117; }
-body.alto-contraste .text-muted, body.alto-contraste .text-secondary { color: #8b949e !important; }
