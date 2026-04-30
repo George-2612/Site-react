@@ -135,3 +135,24 @@ body.alto-contraste .opcoes-acessibilidade {
 body.alto-contraste .opcoes-acessibilidade button {
   color: #0d1117 !important;
 }
+
+/* --- ESTILO DA BARRA DE PESQUISA --- */
+.input-group {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.input-group-text {
+  border: none;
+  padding-left: 20px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+/* --- AJUSTE POSIÇÃO VLIBRAS (PADRÃO SCGE) --- */
+[vw-access-button] {
+  top: 75% !important;
+}

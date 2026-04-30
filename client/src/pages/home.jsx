@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const [contatosBackend, setContatosBackend] = useState([]);
+  // 1. ADICIONADO: Estado para controlar o texto da busca
+  const [busca, setBusca] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:5000/api/contatos')
@@ -25,63 +27,84 @@ function Home() {
       <header className="py-5 text-white shadow-lg w-100" style={{ backgroundColor: '#0A1F44' }}>
         <div className="container">
           <div className="row align-items-center">
-            
-            {/* 1. Lado Esquerdo (col-3) */}
             <div className="col-md-3 text-center text-md-start mb-3 mb-md-0">
               <img src="/img/01logo.png" alt="Logo Fundarpe" style={{ maxHeight: '80px' }} />
             </div>
 
-            {/* 2. Centro (col-6) - TÍTULO CENTRALIZADO */}
             <div className="col-md-6 text-center">
               <h1 className="fw-bold mb-0 display-6">Portal da Transparência</h1>
               <p className="opacity-75 mb-0 fw-light small">Fundação do Patrimônio Histórico e Artístico de Pernambuco</p>
             </div>
 
-            {/* 3. Lado Direito (col-3) */}
             <div className="col-md-3 text-center text-md-end">
               <Link to="/contato" className="btn btn-outline-light rounded-pill px-3 py-2 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
                 <i className="bi bi-envelope-paper me-2"></i>Fale Conosco
               </Link>
             </div>
-
           </div>
         </div>
       </header>
 
+      {/* BARRA DE PESQUISA */}
+      <div className="container mt-4">
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <div className="input-group mb-3 shadow-sm">
+              <span className="input-group-text bg-white border-end-0">
+                <i className="bi bi-search text-primary"></i>
+              </span>
+              <input
+                type="text"
+                className="form-control border-start-0 ps-0"
+                placeholder="O que você procura? (Ex: Licitações, Contratos...)"
+                value={busca}
+                onChange={(e) => setBusca(e.target.value)} // Atualiza o estado
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <main className="container py-5 flex-grow-1">
+        {/* FILTRO DE CONTATOS BACKEND */}
         {contatosBackend.length > 0 && (
           <section className="mb-5 p-4 bg-white rounded shadow-sm border-top border-warning border-4">
             <h3 className="h5 fw-bold mb-4" style={{ color: '#0A1F44' }}>Principais Contatos</h3>
             <div className="row">
-              {contatosBackend.map(c => (
-                <div key={c.id} className="col-md-4 mb-3">
-                  <div className="p-3 border rounded bg-light">
-                    <p className="mb-1 fw-bold text-dark">{c.nome}</p>
-                    <small className="text-muted">{c.cargo}</small><br/>
-                    <small className="text-primary">{c.email}</small>
+              {contatosBackend
+                .filter(c => c.nome.toLowerCase().includes(busca.toLowerCase())) // FILTRO APLICADO
+                .map(c => (
+                  <div key={c.id} className="col-md-4 mb-3">
+                    <div className="p-3 border rounded bg-light">
+                      <p className="mb-1 fw-bold text-dark">{c.nome}</p>
+                      <small className="text-muted">{c.cargo}</small><br/>
+                      <small className="text-primary">{c.email}</small>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </section>
         )}
 
+        {/* FILTRO DE CARDS PRINCIPAIS */}
         <div className="row g-4">
-          {cards.map((card) => (
-            <div key={card.t} className="col-md-6 col-lg-4">
-              <section className="card h-100 border-0 shadow-sm p-4 text-center">
-                <div className="card-body d-flex flex-column">
-                  <h2 className="h5 fw-bold mb-3" style={{ color: '#0A1F44' }}>{card.t}</h2>
-                  <p className="small text-muted mb-4 flex-grow-1">{card.d}</p>
-                  {card.isInternal ? (
-                    <Link to={card.url} className="btn btn-warning rounded-pill px-4 fw-bold shadow-sm">Acessar</Link>
-                  ) : (
-                    <a href={card.url} target="_blank" rel="noopener noreferrer" className="btn btn-warning rounded-pill px-4 fw-bold shadow-sm">Acessar</a>
-                  )}
-                </div>
-              </section>
-            </div>
-          ))}
+          {cards
+            .filter(card => card.t.toLowerCase().includes(busca.toLowerCase())) // FILTRO APLICADO
+            .map((card) => (
+              <div key={card.t} className="col-md-6 col-lg-4">
+                <section className="card h-100 border-0 shadow-sm p-4 text-center">
+                  <div className="card-body d-flex flex-column">
+                    <h2 className="h5 fw-bold mb-3" style={{ color: '#0A1F44' }}>{card.t}</h2>
+                    <p className="small text-muted mb-4 flex-grow-1">{card.d}</p>
+                    {card.isInternal ? (
+                      <Link to={card.url} className="btn btn-warning rounded-pill px-4 fw-bold shadow-sm">Acessar</Link>
+                    ) : (
+                      <a href={card.url} target="_blank" rel="noopener noreferrer" className="btn btn-warning rounded-pill px-4 fw-bold shadow-sm">Acessar</a>
+                    )}
+                  </div>
+                </section>
+              </div>
+            ))}
         </div>
       </main>
 
