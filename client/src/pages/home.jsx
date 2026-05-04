@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const [contatosBackend, setContatosBackend] = useState([]);
-  // 1. ADICIONADO: Estado para controlar o texto da busca
+  // 1. Criamos o estado para armazenar o que o usuário digita
   const [busca, setBusca] = useState('');
 
   useEffect(() => {
@@ -14,13 +14,24 @@ function Home() {
   }, []);
 
   const cards = [
-    { t: 'Informações Institucionais', d: 'Relatórios de gestão fiscal e balanços.', url: 'https://transparencia.pe.gov.br/' },
+    { t: 'Informações Institucionais', d: 'Relatórios de gestão fiscal e balanços.', url: 'institucional/', isInternal: true },
     { t: 'Licitações e Contratos', d: 'Editais e contratos firmados.', url: 'https://transparencia.pe.gov.br/licitacoes-e-contratos/' },
     { t: 'Recursos Humanos', d: 'Folha de pagamento e servidores.', url: 'https://transparencia.pe.gov.br/recursos-humanos/' },
     { t: 'Legislação', d: 'Leis estaduais e decretos da Fundarpe.', url: 'https://www.legislacao.pe.gov.br/' },
     { t: 'Ouvidoria / e-SIC', d: 'Solicite informações e envie sugestões.', url: 'https://www.ouvidoria.pe.gov.br/' },
     { t: 'Estrutura Organizacional', d: 'Organograma e currículo da autoridade.', url: '/autoridade', isInternal: true }
   ];
+
+  // 2. Filtramos os cards e contatos com base na busca
+  const cardsFiltrados = cards.filter(card => 
+    card.t.toLowerCase().includes(busca.toLowerCase()) || 
+    card.d.toLowerCase().includes(busca.toLowerCase())
+  );
+
+  const contatosFiltrados = contatosBackend.filter(c =>
+    c.nome.toLowerCase().includes(busca.toLowerCase()) ||
+    c.cargo.toLowerCase().includes(busca.toLowerCase())
+  );
 
   return (
     <div className="min-vh-100 d-flex flex-column bg-light w-100">
@@ -30,67 +41,58 @@ function Home() {
             <div className="col-md-3 text-center text-md-start mb-3 mb-md-0">
               <img src="/img/01logo.png" alt="Logo Fundarpe" style={{ maxHeight: '80px' }} />
             </div>
-
             <div className="col-md-6 text-center">
               <h1 className="fw-bold mb-0 display-6">Portal da Transparência</h1>
               <p className="opacity-75 mb-0 fw-light small">Fundação do Patrimônio Histórico e Artístico de Pernambuco</p>
             </div>
-
             <div className="col-md-3 text-center text-md-end">
               <Link to="/contato" className="btn btn-outline-light rounded-pill px-3 py-2 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
                 <i className="bi bi-envelope-paper me-2"></i>Fale Conosco
               </Link>
             </div>
           </div>
-        </div>
-      </header>
 
-      {/* BARRA DE PESQUISA */}
-      <div className="container mt-4">
-        <div className="row justify-content-center">
-          <div className="col-md-8">
-            <div className="input-group mb-3 shadow-sm">
-              <span className="input-group-text bg-white border-end-0">
-                <i className="bi bi-search text-primary"></i>
-              </span>
-              <input
-                type="text"
-                className="form-control border-start-0 ps-0"
-                placeholder="O que você procura? (Ex: Licitações, Contratos...)"
-                value={busca}
-                onChange={(e) => setBusca(e.target.value)} // Atualiza o estado
-              />
+          {/* 3. BARRA DE PESQUISA INTEGRADA NO HEADER */}
+          <div className="row mt-4 justify-content-center">
+            <div className="col-md-8">
+              <div className="input-group input-group-lg shadow">
+                <span className="input-group-text bg-white border-0"><i className="bi bi-search text-primary"></i></span>
+                <input 
+                  type="text" 
+                  className="form-control border-0" 
+                  placeholder="Pesquise por licitações, pessoal, nomes..." 
+                  value={busca}
+                  onChange={(e) => setBusca(e.target.value)}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       <main className="container py-5 flex-grow-1">
-        {/* FILTRO DE CONTATOS BACKEND */}
-        {contatosBackend.length > 0 && (
+        {/* Renderiza Contatos apenas se houver algum que combine com a busca */}
+        {contatosFiltrados.length > 0 && (
           <section className="mb-5 p-4 bg-white rounded shadow-sm border-top border-warning border-4">
             <h3 className="h5 fw-bold mb-4" style={{ color: '#0A1F44' }}>Principais Contatos</h3>
             <div className="row">
-              {contatosBackend
-                .filter(c => c.nome.toLowerCase().includes(busca.toLowerCase())) // FILTRO APLICADO
-                .map(c => (
-                  <div key={c.id} className="col-md-4 mb-3">
-                    <div className="p-3 border rounded bg-light">
-                      <p className="mb-1 fw-bold text-dark">{c.nome}</p>
-                      <small className="text-muted">{c.cargo}</small><br/>
-                      <small className="text-primary">{c.email}</small>
-                    </div>
+              {contatosFiltrados.map(c => (
+                <div key={c.id} className="col-md-4 mb-3">
+                  <div className="p-3 border rounded bg-light">
+                    <p className="mb-1 fw-bold text-dark">{c.nome}</p>
+                    <small className="text-muted">{c.cargo}</small><br/>
+                    <small className="text-primary">{c.email}</small>
                   </div>
-                ))}
+                </div>
+              ))}
             </div>
           </section>
         )}
 
-        {/* FILTRO DE CARDS PRINCIPAIS */}
         <div className="row g-4">
-          {cards
-            .filter(card => card.t.toLowerCase().includes(busca.toLowerCase())) // FILTRO APLICADO
-            .map((card) => (
+          {/* 4. USAMOS O ARRAY FILTRADO AQUI */}
+          {cardsFiltrados.length > 0 ? (
+            cardsFiltrados.map((card) => (
               <div key={card.t} className="col-md-6 col-lg-4">
                 <section className="card h-100 border-0 shadow-sm p-4 text-center">
                   <div className="card-body d-flex flex-column">
@@ -104,7 +106,13 @@ function Home() {
                   </div>
                 </section>
               </div>
-            ))}
+            ))
+          ) : (
+            <div className="text-center w-100 py-5">
+              <i className="bi bi-exclamation-circle display-4 text-muted"></i>
+              <p className="mt-3 text-muted">Nenhum serviço ou contato encontrado para "{busca}".</p>
+            </div>
+          )}
         </div>
       </main>
 

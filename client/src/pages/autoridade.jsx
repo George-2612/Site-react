@@ -60,9 +60,8 @@ function Autoridade() {
                   <p className="small text-muted mb-0">Arquivo oficial em formato PDF</p>
                 </div>
                 <a 
-                  href="/arquivos/Organograma.pdf" 
-                  download 
-                  className="btn btn-outline-dark fw-bold"
+                  href="/arquivos/Organograma.pdf" download 
+                  className="btn btn-outline-dark fw-bold "
                 >
                   <i className="bi bi-file-earmark-pdf me-2 text-danger"></i>Baixar PDF
                 </a>

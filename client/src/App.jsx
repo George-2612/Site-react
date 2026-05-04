@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Autoridade from './pages/Autoridade';
 import Contato from './pages/Contato';
-
+import Institucional from './pages/Institucional';
 // Estilos
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -92,6 +92,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/autoridade" element={<Autoridade />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/institucional" element={<Institucional />} /> {/* 2. ROTA AQUI */}
       </Routes>
     </Router>
   );

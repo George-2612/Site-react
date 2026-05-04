@@ -156,3 +156,16 @@ body.alto-contraste .opcoes-acessibilidade button {
 [vw-access-button] {
   top: 75% !important;
 }
+
+/* Destaque para o cabeçalho do acordeão quando aberto */
+.accordion-button:not(.collapsed) {
+  background-color: #ffc107 !important; /* Amarelo Fundarpe */
+  color: #0A1F44 !important; /* Azul Escuro */
+  font-weight: 800 !important;
+}
+
+/* Remove a sombra padrão e foca no estilo limpo */
+.accordion-button:focus {
+  box-shadow: none !important;
+  border-color: rgba(0,0,0,.125);
+}
