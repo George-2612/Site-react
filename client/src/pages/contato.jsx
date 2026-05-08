@@ -1,77 +1,145 @@
-import { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Contato() {
-  const [enviado, setEnviado] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui no futuro você conectaria com seu back-end Node
-    setEnviado(true);
-  };
-
   return (
-    <div className="min-vh-100 bg-light">
-      <nav className="p-3 shadow-sm" style={{ backgroundColor: '#0A1F44' }}>
+    <div className="min-vh-100 d-flex flex-column bg-light w-100">
+      
+      {/* HEADER PADRÃO */}
+      <header className="text-white shadow-sm w-100" style={{ 
+        background: 'linear-gradient(135deg, #0A1F44 0%, #153670 100%)',
+        padding: '1.5rem 0' 
+      }}>
         <div className="container">
-          <Link to="/" className="text-white text-decoration-none">
-            <i className="bi bi-arrow-left me-2"></i>Voltar ao Portal
-          </Link>
+          <div className="row align-items-center">
+            <div className="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+              <img src="/img/fundarpe.png" alt="Logo Fundarpe" style={{ maxHeight: '60px' }} />
+            </div>
+            <div className="col-lg-6 text-center">
+              <h1 className="fw-bold mb-0" style={{ fontSize: '1.25rem' }}>Fale Conosco</h1>
+              <p className="opacity-75 mb-0" style={{ fontSize: '0.8rem' }}>Portal da Transparência - FUNDARPE</p>
+            </div>
+            <div className="col-lg-3 text-center text-lg-end">
+              <Link to="/" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
+                <i className="bi bi-arrow-left me-2"></i>Voltar para o início
+              </Link>
+            </div>
+          </div>
         </div>
-      </nav>
+      </header>
 
-      <main className="container py-5">
-        <div className="row g-4">
-          {/* Lado Esquerdo: Formulário */}
-          <div className="col-md-7">
-            <div className="bg-white p-4 rounded shadow-sm border-top border-warning border-4">
-              <h2 className="fw-bold h4 mb-4" style={{ color: '#0A1F44' }}>Envie uma Mensagem</h2>
-              
-              {enviado ? (
-                <div className="alert alert-success">Mensagem enviada com sucesso! Em breve entraremos em contato.</div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label className="form-label small fw-bold">Nome Completo</label>
-                    <input type="text" className="form-control" required />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label small fw-bold">E-mail</label>
-                    <input type="email" className="form-control" required />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label small fw-bold">Assunto</label>
-                    <select className="form-select">
-                      <option>Dúvidas</option>
-                      <option>Sugestões</option>
-                      <option>E-SIC (Acesso à Informação)</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label small fw-bold">Mensagem</label>
-                    <textarea className="form-control" rows="5" required></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-warning fw-bold px-4">ENVIAR</button>
-                </form>
-              )}
+      <main className="container py-5 flex-grow-1">
+        
+        {/* BLOCOS DE CONTATO RÁPIDO */}
+        <div className="row g-4 mb-5">
+          <div className="col-md-4">
+            <div className="card h-100 border-0 shadow-sm text-center p-4 rounded-4 bg-white">
+              <i className="bi bi-telephone-fill fs-1 text-primary mb-3"></i>
+              <h5 className="fw-bold">Telefone</h5>
+              <p className="fw-bold mb-0">(81) 3184-3000</p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card h-100 border-0 shadow-sm text-center p-4 rounded-4 bg-white">
+              <i className="bi bi-geo-alt-fill fs-1 text-primary mb-3"></i>
+              <h5 className="fw-bold">Endereço</h5>
+              <p className="fw-bold mb-0">Rua da Aurora, 463, Recife-PE</p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="card h-100 border-0 shadow-sm text-center p-4 rounded-4 bg-white">
+              <i className="bi bi-envelope-at-fill fs-1 text-primary mb-3"></i>
+              <h5 className="fw-bold">E-mail</h5>
+              <p className="fw-bold mb-0 text-primary">atendimento@fundarpe.pe.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SEÇÃO INFERIOR: MAPA + INFORMAÇÕES ADICIONAIS */}
+        <div className="row g-4 align-items-stretch">
+          
+          {/* Lado Esquerdo: Mapa Reduzido */}
+          <div className="col-lg-6">
+            <div className="bg-white p-2 rounded-4 shadow-sm h-100">
+              <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.414734731804!2d-34.8819586!3d-8.0591147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18949826317b%3A0x6b8036d0e65c52c5!2sFundarpe!5e0!3m2!1spt-BR!2sbr!4v1715090000000!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="350" 
+              style={{ border: 0, borderRadius: '15px' }} 
+              allowFullScreen="" 
+              loading="lazy"
+              title="Mapa Fundarpe"
+            ></iframe>
             </div>
           </div>
 
-          {/* Lado Direito: Informações Institucionais */}
-          <div className="col-md-5">
-            <div className="bg-white p-4 rounded shadow-sm mb-4">
-              <h2 className="fw-bold h5 mb-3" style={{ color: '#0A1F44' }}>Sede Administrativa</h2>
-              <p className="small mb-2"><i className="bi bi-geo-alt-fill me-2 text-danger"></i>Rua da Aurora, 463 - Recife/PE</p>
-              <p className="small mb-2"><i className="bi bi-telephone-fill me-2 text-primary"></i>(81) 3184-3000</p>
-              <p className="small mb-4"><i className="bi bi-envelope-fill me-2 text-primary"></i>atendimento@fundarpe.pe.gov.br</p>
+          {/* Lado Direito: Foto ou Infos Adicionais */}
+          <div className="col-lg-6">
+            <div className="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center">
+              <h4 className="fw-bold mb-4" style={{ color: '#0A1F44' }}>
+                <i className="bi bi-clock-history me-2 text-primary"></i>Horário de Atendimento
+              </h4>
+              <ul className="list-unstyled mb-4">
+                <li className="mb-3 d-flex align-items-center">
+                  <span className="badge bg-primary-subtle text-primary rounded-pill me-3 px-3">Seg à Sex</span>
+                  <span className="fw-semibold text-dark">08:00 às 17:00</span>
+                </li>
+                <li className="text-muted small">
+                  * Atendimento presencial sujeito a agendamento prévio em períodos de editais.
+                </li>
+              </ul>
               
-              <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.39058514172!2d-34.8812!3d-8.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDMnMzYuMCJTIDM0wrA1MicyOC4zIlc!5e0!3m2!1spt-BR!2sbr!4v1" title="Mapa Fundarpe"></iframe>
+              <div className="rounded-4 overflow-hidden mt-2 shadow-sm">
+                {/* Você pode trocar este placeholder pela foto real da fachada da sede */}
+                <img 
+                  src="/public/img/fundarpe-frente.jpg" 
+                  alt="Sede Fundarpe" 
+                  className="img-fluid w-80"
+                  style={{ objectFit: 'cover', maxHeight: '180px' }}
+                  onError={(e) => e.target.src = "https://via.placeholder.com/600x200?text=Sede+Fundarpe"}
+                />
               </div>
             </div>
           </div>
+
         </div>
       </main>
+
+      {/* FOOTER COMPLETO (IGUAL À HOME) */}
+      <footer className="footer mt-auto py-5 text-white" style={{ backgroundColor: '#0A1F44' }}>
+        <div className="container">
+          <div className="row g-4 align-items-center">
+            {/* Coluna 1: Endereço */}
+            <div className="col-md-4 text-center text-md-start">
+              <p className="mb-1 fw-bold">Rua da Aurora, 463/469</p>
+              <p className="mb-1">Boa Vista, Recife-PE</p>
+              <p className="mb-0 small opacity-75">CEP: 50050-000</p>
+            </div>
+            
+            {/* Coluna 2: Logos */}
+            <div className="col-md-4 text-center">
+              <div className="d-flex justify-content-center align-items-center gap-3">
+                <img src="/img/fundarpe.png" alt="Fundarpe" style={{ height: '40px' }} />
+                <div style={{ width: '1px', height: '30px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+              </div>
+            </div>
+
+            {/* Coluna 3: Contatos */}
+            <div className="col-md-4 text-center text-md-end">
+              <p className="mb-1 fw-bold">(81) 3184-3000</p>
+              <p className="mb-0 small opacity-75">atendimento@fundarpe.pe.gov.br</p>
+            </div>
+          </div>
+          
+          <hr className="my-4 opacity-25" />
+          
+          <div className="text-center">
+            <p className="small mb-0 opacity-50">
+              © 2026 FUNDARPE - Fundação do Patrimônio Histórico e Artístico de Pernambuco
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

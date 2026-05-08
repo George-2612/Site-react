@@ -169,3 +169,67 @@ body.alto-contraste .opcoes-acessibilidade button {
   box-shadow: none !important;
   border-color: rgba(0,0,0,.125);
 }
+
+/* ========================================================================== */
+/* CORREÇÃO DE TEXTO NO MODO ALTO CONTRASTE */
+/* ========================================================================== */
+
+/* Corrige textos dentro dos cards */
+body.alto-contraste .card h1,
+body.alto-contraste .card h2,
+body.alto-contraste .card h3,
+body.alto-contraste .card h4,
+body.alto-contraste .card h5,
+body.alto-contraste .card h6,
+body.alto-contraste .card p,
+body.alto-contraste .card span,
+body.alto-contraste .card a {
+  color: #fdfeff !important;
+}
+
+/* Corrige textos "apagados" do Bootstrap */
+body.alto-contraste .text-muted {
+  color: #8b949e !important;
+}
+
+/* Deixa títulos mais visíveis */
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3 {
+  color: #ffffff !important;
+}
+
+.logo-container {
+  margin-left: 0; /* Remova qualquer margem automática ou fixa */
+  padding-left: 25px;
+}
+
+/* Arredondamento extra para os itens do acordeão */
+.rounded-4 {
+    border-radius: 1.25rem !important; /* Aproximadamente 20px */
+}
+
+/* Sombra suave para dar profundidade */
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Estilo do Botão do Acordeão quando está aberto */
+.accordion-button:not(.collapsed) {
+    background-color: #f0f7ff !important; /* Azul bem clarinho */
+    color: #0056B3 !important; /* Azul Royal */
+    box-shadow: none !important;
+}
+
+/* Remove a borda azul padrão de foco do Bootstrap */
+.accordion-button:focus {
+    box-shadow: none !important;
+    border-color: rgba(0,0,0,.125);
+}
+
+/* Transição suave para hover */
+.accordion-item:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
