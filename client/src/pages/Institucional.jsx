@@ -26,7 +26,7 @@ function Institucional() {
 
             {/* Lado Direito: Botão Voltar Arredondado */}
             <div className="col-lg-3 text-center text-lg-end">
-              <Link to="/" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
+              <Link to="/Transparencia" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
                 <i className="bi bi-arrow-left me-2"></i>Voltar para o Início
               </Link>
             </div>
