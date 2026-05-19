@@ -30,7 +30,6 @@ function Contato() {
 
       <main className="container py-5 flex-grow-1">
         
-        {/* BLOCOS DE CONTATO RÁPIDO */}
         <div className="row g-4 mb-5">
           <div className="col-md-4">
             <div className="card h-100 border-0 shadow-sm text-center p-4 rounded-4 bg-white">
@@ -55,10 +54,8 @@ function Contato() {
           </div>
         </div>
 
-        {/* SEÇÃO INFERIOR: MAPA + INFORMAÇÕES ADICIONAIS */}
         <div className="row g-4 align-items-stretch">
           
-          {/* Lado Esquerdo: Mapa Reduzido */}
           <div className="col-lg-6">
             <div className="bg-white p-2 rounded-4 shadow-sm h-100">
               <iframe 
@@ -73,7 +70,6 @@ function Contato() {
             </div>
           </div>
 
-          {/* Lado Direito: Foto ou Infos Adicionais */}
           <div className="col-lg-6">
             <div className="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center">
               <h4 className="fw-bold mb-4" style={{ color: '#0A1F44' }}>
@@ -90,7 +86,6 @@ function Contato() {
               </ul>
               
               <div className="rounded-4 overflow-hidden mt-2 shadow-sm">
-                {/* Você pode trocar este placeholder pela foto real da fachada da sede */}
                 <img 
                   src="/public/img/fundarpe-frente.jpg" 
                   alt="Sede Fundarpe" 
@@ -105,7 +100,6 @@ function Contato() {
         </div>
       </main>
 
-      {/* FOOTER COMPLETO (IGUAL À HOME) */}
       <footer className="footer mt-auto py-5 text-white" style={{ backgroundColor: '#0A1F44' }}>
         <div className="container">
           <div className="row g-4 align-items-center">

@@ -170,10 +170,6 @@ body.alto-contraste .opcoes-acessibilidade button {
   border-color: rgba(0,0,0,.125);
 }
 
-/* ========================================================================== */
-/* CORREÇÃO DE TEXTO NO MODO ALTO CONTRASTE */
-/* ========================================================================== */
-
 /* Corrige textos dentro dos cards */
 body.alto-contraste .card h1,
 body.alto-contraste .card h2,

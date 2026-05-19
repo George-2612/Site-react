@@ -6,7 +6,6 @@ import Autoridade from './pages/Autoridade';
 import Contato from './pages/Contato';
 import Institucional from './pages/Institucional';
 import Perguntas from './pages/Perguntas';
-// Estilos
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
@@ -26,7 +25,7 @@ function App() {
     if (window.VLibras) {
       new window.VLibras.Widget('https://vlibras.gov.br/app');
     }
-  }, []); // Roda apenas uma vez ao montar o componente
+  }, []); 
 
   // 2. Efeito para Alto Contraste
   useEffect(() => {

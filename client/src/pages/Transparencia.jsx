@@ -5,21 +5,14 @@ function Transparencia() {
   const [contatosBackend, setContatosBackend] = useState([]);
   const [busca, setBusca] = useState('');
 
-  useEffect(() => {
-    fetch('http://localhost:5000/api/contatos')
-      .then(res => res.json())
-      .then(data => setContatosBackend(data))
-      .catch(err => console.error("Erro ao conectar:", err));
-  }, []);
-
   const cards = [
-    { t: 'INFORMAÇÕES INSTITUCIONAIS', d: 'Consulte informações sobre identidade institucional, estrutura organizacional, competências, legislação aplicável, ética e integridade, horário de funcionamento, endereço, contatos, serviços prestados, entre outras informações da FUNDARPE', url: 'institucional/', isInternal: true },
+    { t: 'INFORMAÇÕES INSTITUCIONAIS', d: 'Consulte informações sobre identidade institucional, estrutura organizacional, competências, legislação aplicável, ética e integridade, horário de funcionamento, endereço, contatos, serviços prestados, entre outras informações da FUNDARPE', url: '/Institucional', isInternal: true },
     { t: 'LICITAÇÕES E CONTRATOS', d: 'Obtenha informações sobre o Plano de Contratações Anual, processos licitatórios, inexigibilidade, atas de registro de preço, contratos administrativos, mapa de terceirizados e realize consultas sobre fornecedores.', url: 'https://transparencia.pe.gov.br/licitacoes-e-contratos/' },
     { t: 'RECURSOS HUMANOS', d: 'Obtenha informações sobre servidores ativos, aposentados e pensionistas, estágiarios, remuneração, diárias, concursos entre outras.', url: 'https://transparencia.pe.gov.br/recursos-humanos/' },
     { t: 'LEGISLAÇÃO', d: 'Consulte as leis estaduais, decretos e portarias que regem as atividades da FUNDARPE, garantindo a conformidade e o cumprimento das normas vigentes', url: 'https://www.legislacao.pe.gov.br/' },
     { t: 'PERGUNTAS FREQUENTES', d: 'Acesse as perguntas e respostas mais frequentes da sociedade sobre as atividades desenvolvidas pela FUNDARPE.', url: '/Perguntas', isInternal: true },
     { t: 'SERVIÇO DE INFORMAÇÃO AO CIDADÃO – SIC', d: 'Conheça os Serviços de Informação ao Cidadão, o cumprimento da Lei de Acesso à Informação, entre outras informações.', url: 'https://transparencia.pe.gov.br/participacao-cidada-pe/acesso-a-informacao/' },
-    { t: 'MAPA DE DIÁRIAS E PASSAGENS', d: 'Conheça o mapa de Diárias e Passagens da FUNDARPE com informações referentes ao servidor favorecido, eventos, valores, entre outras informações.', url: 'https://www.ouvidoria.pe.gov.br/' },
+    { t: 'MAPA DE DIÁRIAS E PASSAGENS', d: 'Conheça o mapa de Diárias e Passagens da FUNDARPE com informações referentes ao servidor favorecido, eventos, valores, entre outras informações.', url: 'https://drive.google.com/drive/folders/1vr1u0JXcKy0jdk-qDV_Vtn2xX3E1QANA' },
     { t: 'PATRIMÔNIO PÚBLICO', d: 'Consulte informações sobre imóveis e veículos próprios registrados no patrimônio do Governo do Estado.', url: 'https://transparencia.pe.gov.br/gestao-estadual/patrimonio-publico/' },
     { t: 'DESPESAS', d: 'Confira informações sobre despesas estaduais e pagamentos realizados. Acesse dados detalhados sobre os tipos de gastos, fornecedores, serviços contratados, valores desembolsados e outras informações financeiras.', url: 'https://transparencia.pe.gov.br/despesas/menu-despesas/despesas-gerais/' }
   ];
@@ -27,11 +20,6 @@ function Transparencia() {
   const cardsFiltrados = cards.filter(card => 
     card.t.toLowerCase().includes(busca.toLowerCase()) || 
     card.d.toLowerCase().includes(busca.toLowerCase())
-  );
-
-  const contatosFiltrados = contatosBackend.filter(c =>
-    c.nome.toLowerCase().includes(busca.toLowerCase()) ||
-    c.cargo.toLowerCase().includes(busca.toLowerCase())
   );
 
   return (
@@ -93,28 +81,7 @@ function Transparencia() {
       </header>
 
       <main className="container py-5 flex-grow-1">
-        {contatosFiltrados.length > 0 && (
-          <section className="mb-5 p-4 bg-white rounded-3 shadow-sm border-top border-primary border-4">
-            <div className="d-flex align-items-center mb-4">
-              <i className="bi bi-people-fill text-primary me-2 fs-5"></i>
-              <h3 className="h5 fw-bold mb-0" style={{ color: '#0A1F44' }}>Principais Contatos</h3>
-            </div>
-            <div className="row g-3">
-              {contatosFiltrados.map(c => (
-                <div key={c.id} className="col-md-6 col-lg-4">
-                  <div className="p-3 border border-light-subtle rounded-3 bg-flex bg-body-tertiary h-100 transition-hover">
-                    <p className="mb-1 fw-bold text-dark">{c.nome}</p>
-                    <div className="small text-muted mb-2">{c.cargo}</div>
-                    <a href={`mailto:${c.email}`} className="small text-decoration-none text-primary d-inline-flex align-items-center">
-                      <i className="bi bi-envelope me-1"></i>{c.email}
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
+        
         <div className="row g-4">
           {cardsFiltrados.length > 0 ? (
             cardsFiltrados.map((card) => (
