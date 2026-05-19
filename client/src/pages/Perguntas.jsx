@@ -26,8 +26,8 @@ function Perguntas() {
 
             {/* Lado Direito: Botão Voltar Arredondado */}
             <div className="col-lg-3 text-center text-lg-end">
-              <Link to="/" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
-                <i className="bi bi-arrow-left me-2"></i>Voltar para o Início
+              <Link to="/Transparencia" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
+                <i className="bi bi-arrow-left me-2"></i>{' '}Voltar para o Início
               </Link>
             </div>
 
@@ -185,7 +185,7 @@ function Perguntas() {
             </h2>
             <div id="faqAgenda" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
               <div className="accordion-body bg-white text-muted border-top">
-                <p>A programação detalhada dos grandes ciclos festivos e festivais realizados pela FUNDARPE pode ser acessada no portal <strong>Cultura.PE</strong> e no site oficial do Governo de Pernambuco.</p>
+                <p>A programação detalhada dos grandes ciclos festivos e festivals realizados pela FUNDARPE pode ser acessada no portal <strong>Cultura.PE</strong> e no site oficial do Governo de Pernambuco.</p>
                 <p>Lá são publicados os horários, locais das apresentações e a lista completa de artistas habilitados.</p>
               </div>
             </div>

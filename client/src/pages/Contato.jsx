@@ -20,8 +20,8 @@ function Contato() {
               <p className="opacity-75 mb-0" style={{ fontSize: '0.8rem' }}>Portal da Transparência - FUNDARPE</p>
             </div>
             <div className="col-lg-3 text-center text-lg-end">
-              <Link to="/" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
-                <i className="bi bi-arrow-left me-2"></i>Voltar para o início
+              <Link to="/Transparencia" className="btn btn-outline-light rounded-pill px-4 fw-bold shadow-sm" style={{ fontSize: '0.8rem' }}>
+                <i className="bi bi-arrow-left me-2"></i>{' '}Voltar para o início
               </Link>
             </div>
           </div>
@@ -59,27 +59,27 @@ function Contato() {
           <div className="col-lg-6">
             <div className="bg-white p-2 rounded-4 shadow-sm h-100">
               <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.414734731804!2d-34.8819586!3d-8.0591147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18949826317b%3A0x6b8036d0e65c52c5!2sFundarpe!5e0!3m2!1spt-BR!2sbr!4v1715090000000!5m2!1spt-BR!2sbr" 
-              width="100%" 
-              height="350" 
-              style={{ border: 0, borderRadius: '15px' }} 
-              allowFullScreen="" 
-              loading="lazy"
-              title="Mapa Fundarpe"
-            ></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.414734731804!2d-34.8819586!3d-8.0591147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18949826317b%3A0x6b8036d0e65c52c5!2sFundarpe!5e0!3m2!1spt-BR!2sbr!4v1715090000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="350" 
+                style={{ border: 0, borderRadius: '15px' }} 
+                allowFullScreen="" 
+                loading="lazy"
+                title="Mapa Fundarpe"
+              ></iframe>
             </div>
           </div>
 
           <div className="col-lg-6">
             <div className="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center">
               <h4 className="fw-bold mb-4" style={{ color: '#0A1F44' }}>
-                <i className="bi bi-clock-history me-2 text-primary"></i>Horário de Atendimento
+                <i className="bi bi-clock-history me-2 text-primary"></i>{' '}Horário de Atendimento
               </h4>
               <ul className="list-unstyled mb-4">
                 <li className="mb-3 d-flex align-items-center">
                   <span className="badge bg-primary-subtle text-primary rounded-pill me-3 px-3">Seg à Sex</span>
                   <span className="fw-semibold text-dark">08:00 às 17:00</span>
-                </li>
+                </li >
                 <li className="text-muted small">
                   * Atendimento presencial sujeito a agendamento prévio em períodos de editais.
                 </li>
@@ -91,7 +91,7 @@ function Contato() {
                   alt="Sede Fundarpe" 
                   className="img-fluid w-80"
                   style={{ objectFit: 'cover', maxHeight: '180px' }}
-                  onError={(e) => e.target.src = "https://via.placeholder.com/600x200?text=Sede+Fundarpe"}
+                  onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/600x200?text=Sede+Fundarpe"; }}
                 />
               </div>
             </div>
