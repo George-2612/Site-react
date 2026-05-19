@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react'; 
 import { Link } from 'react-router-dom';
 
 function Transparencia() {
-  const [contatosBackend, setContatosBackend] = useState([]);
+ 
   const [busca, setBusca] = useState('');
 
   const cards = [
@@ -147,8 +147,8 @@ function Transparencia() {
             <div className="col-md-4 d-flex flex-column align-items-center">
               <i className="bi bi-envelope-fill text-primary fs-3 mb-2"></i>
               <div style={{ maxWidth: '200px' }}>
-                <p className="fw-bold mb-0">atendimento@</p>
-                <p className="fw-bold mb-0">fundarpe.pe.gov.br</p>
+                {/* CORRIGIDO: Linha de e-mail unificada */}
+                <p className="fw-bold mb-0">atendimento@fundarpe.pe.gov.br</p>
               </div>
             </div>
           </div>
@@ -159,15 +159,6 @@ function Transparencia() {
             <div className="d-flex justify-content-center gap-4">
               <a href="https://www.instagram.com/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
                 <i className="bi bi-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="https://www.youtube.com/user/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
-                <i className="bi bi-youtube"></i>
-              </a>
-              <a href="https://twitter.com/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
-                <i className="bi bi-twitter-x"></i>
               </a>
             </div>
           </div>

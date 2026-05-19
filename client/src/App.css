@@ -10,7 +10,6 @@ body {
 /* ==========================================================================
    2. SEU MENU DE ACESSIBILIDADE (LADO ESQUERDO)
    ========================================================================== */
-
 .menu-acessibilidade-container {
   position: fixed;
   left: 20px;
@@ -87,12 +86,10 @@ body {
 }
 
 /* ==========================================================================
-   3. AJUSTE PARA O VLIBRAS (LADO DIREITO - PADRÃO)
+   3. AJUSTE PARA O VLIBRAS (LADO DIREITO - PADRÃO SCGE)
    ========================================================================== */
-
-/* Apenas garantimos que o VLibras não fique em cima do seu menu no mobile */
 [vw-access-button] {
-  top: 75% !important; /* Mantém ele na direita, mais para baixo */
+  top: 75% !important; /* Mantém ele na direita, mais para baixo, sem conflitar com mobile */
 }
 
 /* ==========================================================================
@@ -136,41 +133,7 @@ body.alto-contraste .opcoes-acessibilidade button {
   color: #0d1117 !important;
 }
 
-/* --- ESTILO DA BARRA DE PESQUISA --- */
-.input-group {
-  border-radius: 50px;
-  overflow: hidden;
-}
-
-.input-group-text {
-  border: none;
-  padding-left: 20px;
-}
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #dee2e6;
-}
-
-/* --- AJUSTE POSIÇÃO VLIBRAS (PADRÃO SCGE) --- */
-[vw-access-button] {
-  top: 75% !important;
-}
-
-/* Destaque para o cabeçalho do acordeão quando aberto */
-.accordion-button:not(.collapsed) {
-  background-color: #ffc107 !important; /* Amarelo Fundarpe */
-  color: #0A1F44 !important; /* Azul Escuro */
-  font-weight: 800 !important;
-}
-
-/* Remove a sombra padrão e foca no estilo limpo */
-.accordion-button:focus {
-  box-shadow: none !important;
-  border-color: rgba(0,0,0,.125);
-}
-
-/* Corrige textos dentro dos cards */
+/* Corrige textos dentro dos cards no alto contraste */
 body.alto-contraste .card h1,
 body.alto-contraste .card h2,
 body.alto-contraste .card h3,
@@ -195,37 +158,59 @@ body.alto-contraste h3 {
   color: #ffffff !important;
 }
 
+/* ==========================================================================
+   6. COMPONENTES E AUXILIARES (BUSCA, ACORDEÃO E LAYOUT)
+   ========================================================================== */
+
+/* --- BARRA DE PESQUISA --- */
+.input-group {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.input-group-text {
+  border: none;
+  padding-left: 20px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+/* --- LOGO --- */
 .logo-container {
-  margin-left: 0; /* Remova qualquer margem automática ou fixa */
+  margin-left: 0; 
   padding-left: 25px;
 }
 
-/* Arredondamento extra para os itens do acordeão */
+/* --- CLASSES DE ESTILO GERAL --- */
 .rounded-4 {
-    border-radius: 1.25rem !important; /* Aproximadamente 20px */
+  border-radius: 1.25rem !important; /* Aproximadamente 20px */
 }
 
-/* Sombra suave para dar profundidade */
 .shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-/* Estilo do Botão do Acordeão quando está aberto */
+/* --- ACORDEÃO (CONECTADO E UNIFICADO) --- */
+
 .accordion-button:not(.collapsed) {
-    background-color: #f0f7ff !important; /* Azul bem clarinho */
-    color: #0056B3 !important; /* Azul Royal */
-    box-shadow: none !important;
+  background-color: #f0f7ff !important; /* Azul bem clarinho de fundo */
+  color: #0056B3 !important; /* Azul Royal no texto */
+  font-weight: 800 !important;
+  box-shadow: none !important;
 }
 
-/* Remove a borda azul padrão de foco do Bootstrap */
+/* Mesclados os blocos repetidos do ".accordion-button:focus" */
 .accordion-button:focus {
-    box-shadow: none !important;
-    border-color: rgba(0,0,0,.125);
+  box-shadow: none !important;
+  border-color: rgba(0,0,0,.125);
 }
 
-/* Transição suave para hover */
+/* Transição suave para hover nos cards do acordeão */
 .accordion-item:hover {
-    transform: translateY(-2px);
-    transition: transform 0.3s ease;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
 }

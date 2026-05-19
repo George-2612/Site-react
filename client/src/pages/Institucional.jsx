@@ -51,9 +51,8 @@ function Institucional() {
             </h2>
             <div id="collapseIdentidade" className="accordion-collapse collapse" data-bs-parent="#accordionInstitucional">
               <div className="accordion-body bg-white text-muted border-top">
-                <p>A Fundação do Patrimônio Histórico e Artístico de Pernambuco – FUNDARPE é órgão integrante da Administração Indireta do Poder Executivo Estadual.</p>
+                <p>A Fundação do Patrimônio Histórico e Artístico de Pernambuco – FUNDARPE é órgão integrante da Administration Indireta do Poder Executivo Estadual.</p>
                 <p><strong>MISSÃO</strong> – Preservar, promover e fomentar o patrimônio cultural pernambucano, garantindo o acesso da população às políticas públicas de cultura.</p>
-                <p><strong>PLANEJAMENTO ESTRATÉGICO</strong> – <a href="/arquivos/planejamento-fundarpe.pdf" className="text-primary text-decoration-none fw-bold" target="_blank">Conheça o Planejamento Estratégico.</a></p>
               </div>
             </div>
           </div>
@@ -67,7 +66,7 @@ function Institucional() {
             </h2>
             <div id="collapseEstrutura" className="accordion-collapse collapse" data-bs-parent="#accordionInstitucional">
               <div className="accordion-body bg-white text-muted border-top text-center py-4">
-                <a href="/arquivos/Organograma.pdf" target="_blank" className="btn btn-primary rounded-pill px-4 fw-bold">
+                <a href="/arquivos/Organograma.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-pill px-4 fw-bold">
                   <i className="bi bi-diagram-3 me-2"></i>Visualizar Organograma Atualizado
                 </a>
               </div>
@@ -88,24 +87,8 @@ function Institucional() {
             </div>
           </div>
 
-          {/* 4. Gestão */}
-          <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
-            <h2 className="accordion-header">
-              <button className="accordion-button collapsed fw-bold text-dark py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGestao">
-                RELATÓRIOS DE GESTÃO
-              </button>
-            </h2>
-            <div id="collapseGestao" className="accordion-collapse collapse" data-bs-parent="#accordionInstitucional">
-              <div className="accordion-body bg-white text-muted border-top text-center py-4">
-                <p className="mb-3">Acesse os relatórios anuais de atividades e balanços financeiros.</p>
-                <a href="#" className="btn btn-primary rounded-pill px-4 fw-bold">
-                  <i className="bi bi-file-earmark-pdf me-2"></i>Baixar Relatório Anual 2025
-                </a>
-              </div>
-            </div>
-          </div>
 
-          {/* 5. Principais Contatos */}
+          {/* 4. Principais Contatos */}
           <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
             <h2 className="accordion-header">
               <button className="accordion-button collapsed fw-bold text-dark py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContatos">

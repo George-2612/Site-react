@@ -25,7 +25,7 @@ function Home() {
 
             {/* Alerta de Em Construção */}
             <div className="alert alert-warning border-0 shadow-sm rounded-3 py-3 mb-5" role="alert">
-              <i className="bi bi-exclamation-triangle-fill me-2"></i>
+              <i className="bi bi-exclamation-triangle-fill me-2"></i>{' '}
               Atenção: O novo <strong>Portal da Fundarpe</strong> está em fase de construção.
             </div>
 
@@ -37,7 +37,7 @@ function Home() {
                 to="/transparencia" 
                 className="btn btn-primary btn-lg shadow-sm py-3 fw-semibold d-flex align-items-center justify-content-center"
               >
-                <i className="bi bi-shield-check me-2 fs-5"></i>
+                <i className="bi bi-shield-check me-2 fs-5"></i>{' '}
                 Acessar Área de Transparência
               </Link>
 
@@ -48,9 +48,9 @@ function Home() {
                 rel="noopener noreferrer" 
                 className="btn btn-outline-dark btn-lg shadow-sm py-3 fw-semibold d-flex align-items-center justify-content-center"
               >
-                <i className="bi bi-globe2 me-2 fs-5"></i>
+                <i className="bi bi-globe2 me-2 fs-5"></i>{' '}
                 Ir para o Portal da Cultura PE
-                <i className="bi bi-box-arrow-up-right ms-2 fs-6 opacity-50"></i>
+                {' '}<i className="bi bi-box-arrow-up-right ms-2 fs-6 opacity-50"></i>
               </a>
 
             </div>
@@ -58,7 +58,7 @@ function Home() {
         </div>
       </div>
 
-      {/* O SEU RODAPÉ CUSTOMIZADO */}
+      {/* RODAPÉ CUSTOMIZADO */}
       <footer className="py-5 text-white shadow-lg" style={{ backgroundColor: '#001a35' }}>
         <div className="container">
           <div className="row text-center align-items-start g-4">
@@ -85,8 +85,7 @@ function Home() {
             <div className="col-md-4 d-flex flex-column align-items-center">
               <i className="bi bi-envelope-fill text-primary fs-3 mb-2"></i>
               <div style={{ maxWidth: '200px' }}>
-                <p className="fw-bold mb-0">atendimento@</p>
-                <p className="fw-bold mb-0">fundarpe.pe.gov.br</p>
+                <p className="fw-bold mb-0">atendimento@fundarpe.pe.gov.br</p>
               </div>
             </div>
           </div>
@@ -97,15 +96,6 @@ function Home() {
             <div className="d-flex justify-content-center gap-4">
               <a href="https://www.instagram.com/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
                 <i className="bi bi-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="https://www.youtube.com/user/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
-                <i className="bi bi-youtube"></i>
-              </a>
-              <a href="https://twitter.com/fundarpe" target="_blank" rel="noopener noreferrer" className="text-white fs-4 transition-all hover-primary">
-                <i className="bi bi-twitter-x"></i>
               </a>
             </div>
           </div>
