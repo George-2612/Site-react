@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function Institucional() {
   return (
@@ -116,10 +117,7 @@ function Institucional() {
         </div>
       </main>
 
-      {/* FOOTER MANTENDO O PADRÃO */}
-      <footer className="py-4 text-white mt-auto w-100 text-center" style={{ backgroundColor: '#0A1F44' }}>
-        <p className="small mb-0 opacity-50">© 2026 FUNDARPE - Fundação do Patrimônio Histórico e Artístico de Pernambuco</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
