@@ -1,0 +1,24 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependências (O MAIS IMPORTANTE)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Produção
+dist/
+dist-ssr/
+client/dist/
+
+# Variáveis de ambiente (Segurança!)
+.env
+.env.local
+server/.env
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
