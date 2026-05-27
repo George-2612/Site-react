@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function Contato() {
   return (
@@ -100,40 +101,7 @@ function Contato() {
         </div>
       </main>
 
-      <footer className="footer mt-auto py-5 text-white" style={{ backgroundColor: '#0A1F44' }}>
-        <div className="container">
-          <div className="row g-4 align-items-center">
-            {/* Coluna 1: Endereço */}
-            <div className="col-md-4 text-center text-md-start">
-              <p className="mb-1 fw-bold">Rua da Aurora, 463/469</p>
-              <p className="mb-1">Boa Vista, Recife-PE</p>
-              <p className="mb-0 small opacity-75">CEP: 50050-000</p>
-            </div>
-            
-            {/* Coluna 2: Logos */}
-            <div className="col-md-4 text-center">
-              <div className="d-flex justify-content-center align-items-center gap-3">
-                <img src="/img/fundarpe.png" alt="Fundarpe" style={{ height: '40px' }} />
-                <div style={{ width: '1px', height: '30px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-              </div>
-            </div>
-
-            {/* Coluna 3: Contatos */}
-            <div className="col-md-4 text-center text-md-end">
-              <p className="mb-1 fw-bold">(81) 3184-3000</p>
-              <p className="mb-0 small opacity-75">atendimento@fundarpe.pe.gov.br</p>
-            </div>
-          </div>
-          
-          <hr className="my-4 opacity-25" />
-          
-          <div className="text-center">
-            <p className="small mb-0 opacity-50">
-              © 2026 FUNDARPE - Fundação do Patrimônio Histórico e Artístico de Pernambuco
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function Autoridade() {
   const info = {
     nome: "Renata Borba",
     cargo: "Presidente da FUNDARPE",
-    curriculo: "Arquiteta e urbanista graduada pela Universidade Federal de Pernambuco (UFPE), com especialização em Gestão do Patrimônio Cultural. Possui vasta experiência na administração pública, tendo atuado anteriormente na Secretaria de Cultura do Estado. À frente da FUNDARPE, coordena as políticas de preservação do patrimônio histórico, artístico e cultural de Pernambuco, além de gerir o fomento às artes através do Funcultura."
+    curriculo: "Renata Duarte Borba é formada em Arquitetura e Urbanismo pela Universidade Federal de Pernambuco, bacharel em Administração pela Universidade de Pernambuco e possui MBA em Gestão e Qualidade das Construções pela Universidade Salvador. Especialista em Conservação e Restauração do Patrimônio Cultural Edificado pela Fundação Joaquim Nabuco, foi superintendente do Instituto do Patrimônio Histórico e Artístico Nacional em Pernambuco entre os anos de 2016 e 2020. Desde 2023, exerce o cargo de presidente da Fundação do Patrimônio Histórico e Artístico de Pernambuco."
   };
 
   return (
@@ -92,10 +93,7 @@ function Autoridade() {
         </div>
       </main>
 
-      {/* FOOTER MANTENDO O PADRÃO */}
-      <footer className="py-4 text-white mt-auto w-100 text-center" style={{ backgroundColor: '#0A1F44' }}>
-        <p className="small mb-0 opacity-50">© 2026 FUNDARPE - Fundação do Patrimônio Histórico e Artístico de Pernambuco</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

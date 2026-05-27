@@ -27,7 +27,7 @@ function Footer() {
           {/* Coluna 3: E-mail */}
           <div className="col-md-4 d-flex flex-column align-items-center">
             <i className="bi bi-envelope-fill text-primary fs-3 mb-2"></i>
-            <div style={{ maxWidth: '200px' }}>
+            <div>
               <p className="fw-bold mb-0">atendimento@fundarpe.pe.gov.br</p>
             </div>
           </div>
