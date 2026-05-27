@@ -5,15 +5,15 @@ import Footer from '../components/Footer';
 function Perguntas() {
   return (
     <div className="min-vh-100 d-flex flex-column bg-light w-100">
-      
+
       {/* HEADER PADRÃO HOME + BOTÃO VOLTAR */}
-      <header className="text-white shadow-sm w-100" style={{ 
+      <header className="text-white shadow-sm w-100" style={{
         background: 'linear-gradient(135deg, #0A1F44 0%, #153670 100%)',
-        padding: '1.5rem 0' 
+        padding: '1.5rem 0'
       }}>
         <div className="container">
           <div className="row align-items-center">
-            
+
             {/* Lado Esquerdo: Logo */}
             <div className="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
               <img src="/img/fundarpe.png" alt="Logo Fundarpe" style={{ maxHeight: '100px' }} />
@@ -42,7 +42,7 @@ function Perguntas() {
 
         {/* Acordeão com Estilo de Cards Arredondados */}
         <div className="accordion accordion-flush" id="accordionPerguntas">
-          
+
           {/* 1. Endereço */}
           <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
             <h2 className="accordion-header">
@@ -96,26 +96,12 @@ function Perguntas() {
             </h2>
             <div id="faqTombamento" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
               <div className="accordion-body bg-white text-muted border-top">
-                <p>O pedido deve ser formalizado via requerimento dirigido à <strong>Gerência de Patrimônio Cultural da FUNDARPE</strong>.</p>
+                <p>O pedido deve ser formalizado via requerimento dirigido à <strong>Diretoria de Preservação do Patrimônio Cultural</strong>.</p>
                 <p>É necessário anexar justificativa do valor histórico ou cultural, fotos do bem e dados de identificação do proprietário. O processo passará por análise técnica do Conselho Estadual de Preservação do Patrimônio Cultural.</p>
               </div>
             </div>
           </div>
 
-          {/* 5. e-SIC */}
-          <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
-            <h2 className="accordion-header">
-              <button className="accordion-button collapsed fw-bold text-dark py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faqSIC">
-                Como posso protocolar um pedido de informação oficial (e-SIC)?
-              </button>
-            </h2>
-            <div id="faqSIC" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
-              <div className="accordion-body bg-white border-top">
-                <p>Você pode utilizar o <strong>Sistema de Informação ao Cidadão (e-SIC)</strong> disponível no site da Transparência de Pernambuco.</p>
-                <p>Caso prefira o atendimento presencial, pode procurar a nossa Ouvidoria na sede da Fundarpe para protocolar o seu pedido de acesso à informação.</p>
-              </div>
-            </div>
-          </div>
 
           {/* 6. Cadastro de Produtor Cultural (CPC) */}
           <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
@@ -126,7 +112,9 @@ function Perguntas() {
             </h2>
             <div id="faqCPC" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
               <div className="accordion-body bg-white text-muted border-top">
-                <p>O cadastro e a renovação devem ser realizados através do <strong>Prosas</strong> ou do sistema indicado no site oficial da FUNDARPE.</p>
+                <p>
+                  O cadastro e a renovação devem ser realizados através do <a href="https://www.cultura.pe.gov.br" target="_blank" rel="noopener noreferrer" className="fw-bold text-primary text-decoration-none hover-underline">Cultura.PE</a>, onde as informações podem ser consultadas atualmente.
+                </p>
                 <p>É necessário apresentar documentos como RG, CPF, comprovante de residência e um portfólio detalhado que comprove atuação na área cultural há, pelo menos, um ou dois anos (conforme exigido no regulamento vigente).</p>
               </div>
             </div>
@@ -141,26 +129,12 @@ function Perguntas() {
             </h2>
             <div id="faqEspacos" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
               <div className="accordion-body bg-white text-muted border-top">
-                <p>A solicitação de pauta para equipamentos como o <strong>Cinema São Luiz, Teatro Arraial ou museus estaduais</strong> deve ser feita via ofício direcionado à diretoria do espaço ou através de editais de ocupação específicos.</p>
-                <p>Verifique as taxas de uso e a disponibilidade de datas na aba "Equipamentos Culturais" do nosso site principal.</p>
+                <p>A solicitação de pauta para espaços como o <strong>Cinema São Luiz, Teatro Arraial ou museus estaduais</strong> deve ser feita via <strong>Ofício à Superintendência de Equipamentos Culturais</strong></p>
+                <p className="mb-0">Verifique as taxas de uso e a disponibilidade de datas na aba de equipamentos do site oficial.</p>
               </div>
             </div>
           </div>
 
-          {/* 8. Prestação de Contas */}
-          <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
-            <h2 className="accordion-header">
-              <button className="accordion-button collapsed fw-bold text-dark py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faqContas">
-                Onde encontro orientações para prestação de contas de projetos aprovados?
-              </button>
-            </h2>
-            <div id="faqContas" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
-              <div className="accordion-body bg-white text-muted border-top">
-                <p>As orientações completas, manuais e formulários para prestação de contas do <strong>Funcultura, Lei Paulo Gustavo ou Aldir Blanc</strong> estão disponíveis na área do proponente.</p>
-                <p>Em caso de dúvidas técnicas, você pode agendar um atendimento com a Unidade de Prestação de Contas da FUNDARPE.</p>
-              </div>
-            </div>
-          </div>
 
           {/* 9. Acessibilidade */}
           <div className="accordion-item mb-3 border-0 rounded-4 shadow-sm overflow-hidden">
@@ -186,8 +160,18 @@ function Perguntas() {
             </h2>
             <div id="faqAgenda" className="accordion-collapse collapse" data-bs-parent="#accordionPerguntas">
               <div className="accordion-body bg-white text-muted border-top">
-                <p>A programação detalhada dos grandes ciclos festivos e festivals realizados pela FUNDARPE pode ser acessada no portal <strong>Cultura.PE</strong> e no site oficial do Governo de Pernambuco.</p>
-                <p>Lá são publicados os horários, locais das apresentações e a lista completa de artistas habilitados.</p>
+                <p className="mb-0">
+                  A programação detalhada, horários, locais das apresentações e atualizações em tempo real dos grandes ciclos festivos e festivais saem <strong>nas redes sociais oficiais da FUNDARPE</strong>, como o Instagram.
+                  <a
+                    href="https://www.instagram.com/fundarpe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-danger ms-2 align-middle fs-5"
+                    title="Siga a FUNDARPE no Instagram"
+                  >
+                    <i className="bi bi-instagram"></i>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -195,7 +179,7 @@ function Perguntas() {
         </div>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
