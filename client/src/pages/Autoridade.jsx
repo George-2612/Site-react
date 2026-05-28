@@ -51,7 +51,7 @@ function Autoridade() {
               <div className="row align-items-center mb-5">
                 <div className="col-md-5 col-lg-4 text-center mb-4 mb-md-0">
                   <img
-                    src="/public/img/presidente.jpeg"
+                    src="/img/presidente.jpeg"
                     alt={`Foto oficial de ${info.nome}`}
                     className="img-fluid rounded-4 shadow-sm border border-3 border-light"
                     style={{ maxHeight: '300px', objectFit: 'cover' }}
